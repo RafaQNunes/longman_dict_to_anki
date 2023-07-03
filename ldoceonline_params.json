@@ -1,7 +1,7 @@
 {
   "language_to_translate": "pt",
   "flag_use_chatgpt": false,
-  "openai_api_key": "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",
+  "openai_api_key": "your_openai_api_key",
   "flag_fill_phonetic_transc": true,
   "trans_word_method": "chatgpt",
   "fill_examples_chatgpt": "phrases",
