@@ -4,7 +4,7 @@
 # # Packages
 # ### Verify if all packages are OK
 
-# In[153]:
+# In[99]:
 
 
 # Function to check and load libraries
@@ -35,7 +35,7 @@ def import_and_check(library: str, sublibrary: str = '', librename: str = '', im
         return False
 
 
-# In[154]:
+# In[100]:
 
 
 # Check if a package is imported
@@ -43,7 +43,7 @@ def is_package_imported(package_name):
     return package_name in sys.modules
 
 
-# In[155]:
+# In[101]:
 
 
 if 'openai' in globals(): del openai # delete openai package if it's loaded
@@ -56,7 +56,7 @@ else:
     exit()
 
 
-# In[156]:
+# In[102]:
 
 
 print('\nStart the application for getting meanings from ldoceonline.com with Python. By Rafael de Queiroz Nunes.')
@@ -64,7 +64,7 @@ print('\nStart the application for getting meanings from ldoceonline.com with Py
 
 # # Variables
 
-# In[157]:
+# In[103]:
 
 
 ########################################
@@ -81,7 +81,7 @@ except FileNotFoundError:
     exit()
 
 
-# In[158]:
+# In[104]:
 
 
 # Access the data
@@ -126,7 +126,7 @@ try:
     # Parameters for translating examples
     # None: don't translate;
     # 'chatgpt': use chatgpt (don't recommended, translator is enought. 'flag_use_chatgpt = True' is a must.);
-    # 'gtrans': use Google Translator package (recommended. 'flag_use_gtrans = True' is a must.).
+    # 'gtrans': use Google Translator package.
     # Standard: 'gtrans'
 
 
@@ -135,7 +135,7 @@ try:
     if type(fill_examples_chatgpt) != str:
         raise TypeError("Key 'fill_examples_chatgpt' is not in correct type 'str'.")
     # Parameters for filling examples that was not found on Longman Dictionary
-    # 'phrases': you fill the phrase fill with one example with chat-gpt if there is no other tool to use ('flag_use_chatgpt = True' is a must.;
+    # 'phrases': you fill the phrase fill with one example with chatgpt if there is no other tool to use ('flag_use_chatgpt = True' is a must.;
     # 'all': fill all examples fields with chat-gpt if necessary;
     # None: you don't fill it with chat-gpt.
     # Standard: None
@@ -148,7 +148,7 @@ try:
     # Parameters to translate words inserted
     # None: don't translate;
     # 'chatgpt': use chatgpt (recommended, but it spends tokens. 'flag_use_chatgpt = True' is a must.);
-    # 'gtrans': use Google Translator package (don't recommended. 'flag_use_gtrans = True' is a must.).
+    # 'gtrans': use Google Translator package.
     # Standard: None
 
 
@@ -177,7 +177,7 @@ except TypeError as e:
     exit()
 
 
-# In[159]:
+# In[105]:
 
 
 # Print data
@@ -211,7 +211,7 @@ print('- words: ',words)
 # - **Tags**: the original language in upper case, and the Part of Speech in lower case. (Example: ENGLISH adjective).
 # 
 
-# In[160]:
+# In[106]:
 
 
 #   WORDS TO DELETE FROM GRAMMAR KEYS
@@ -397,7 +397,7 @@ def chatgpt_translate_phrase_from_eng(phrase: str, language: str):
 
 # ### Auxiliary functions
 
-# In[166]:
+# In[107]:
 
 
 # Clean repetitive words from string
@@ -408,7 +408,7 @@ def unique_words_in_string(input_string):
     return ' '.join(cleaned_words)
 
 
-# In[167]:
+# In[108]:
 
 
 # Mark duplicated values from list
@@ -417,7 +417,7 @@ def list_mark_duplicates(list: list):
     else: return [True if v in list[:i] else False for i, v in enumerate(list)] # Returning
 
 
-# In[92]:
+# In[109]:
 
 
 # Return random values from string
@@ -445,7 +445,7 @@ def get_random_values(my_list: list, num_values: int):
     return [my_list[index] for index in indices]
 
 
-# In[169]:
+# In[110]:
 
 
 # Export list to csv
@@ -456,7 +456,7 @@ def export_to_csv(data, filename):
             file.write(line + '\n')
 
 
-# In[170]:
+# In[111]:
 
 
 # Remove special characters
@@ -464,7 +464,7 @@ def remove_special_characters(string):
     return ''.join([char if ((char.isalnum()) or char == ' ') else '' for char in string])
 
 
-# In[171]:
+# In[112]:
 
 
 # Remove excessive spaces on a string
@@ -472,7 +472,7 @@ def remove_excessive_spaces(string : str):
     return ' '.join(string.strip().split())
 
 
-# In[172]:
+# In[113]:
 
 
 # Get formatted time
@@ -489,7 +489,7 @@ def get_complete_datetime():
     return f"{month} {day}{ordinal_suffix}, {year}, {hour}:{minute}"
 
 
-# In[173]:
+# In[114]:
 
 
 # Replace special characters
@@ -503,7 +503,7 @@ def replace_special_characters(string : str, replacement : str = ''):
 
 # ### Main functions (execution, web scrapping etc.)
 
-# In[174]:
+# In[115]:
 
 
 #############################################################################
@@ -837,7 +837,7 @@ def meanings_word_ldoceonline(word, url):
     return list_meaning, [list_return_words, list_return_urls], total_chatgpt_token, total_chatgpt_price
 
 
-# In[175]:
+# In[116]:
 
 
 #############################################################################
@@ -874,7 +874,7 @@ def get_google_images(query: str, img_name: str, images_limit: int):
     return
 
 
-# In[176]:
+# In[117]:
 
 
 #############################################################################
@@ -967,14 +967,14 @@ def list_word_ldoceonline(list_words):
 
 # # Apply parameters
 
-# In[177]:
+# In[118]:
 
 
 print('\n###################################################################')
 print('Import modules according with the parameters:\n')
 
 
-# In[178]:
+# In[119]:
 
 
 #### PARAMETER: flag_fill_phonetic_transc -> global_phonetic_transc
@@ -988,7 +988,7 @@ if flag_fill_phonetic_transc:
 print(text_warning)
 
 
-# In[179]:
+# In[120]:
 
 
 #### PARAMETER: flag_use_chatgpt, openai_api -> global_apply_chatgpt
@@ -1004,7 +1004,7 @@ if flag_use_chatgpt:
 print(text_warning)
 
 
-# In[180]:
+# In[121]:
 
 
 #### PARAMETER: language_to_translate -> global_apply_trans, global_lang_simple, global_lang_compl, langs_dict
@@ -1033,7 +1033,13 @@ if not language_to_translate in [None,'']:
 print(text_warning)
 
 
-# In[181]:
+# In[129]:
+
+
+GoogleTranslator().get_supported_languages(as_dict=True).values()
+
+
+# In[122]:
 
 
 #### PARAMETER: trans_word_method -> global_tword
@@ -1045,7 +1051,7 @@ else: global_tword = ''
 print('\n' + ('Words will be translated by ChatGPT' if global_tword == 'chatgpt' else 'Words will be translated by Google Translation (not recommended)' if global_tword == 'gtrans' else 'Words won\'t be translated.'))
 
 
-# In[182]:
+# In[123]:
 
 
 #### PARAMETER: trans_examples_method -> global_texamp
@@ -1057,7 +1063,7 @@ else: global_texamp = ''
 print('\n' + ('Examples will be translated by ChatGPT' if global_texamp == 'chatgpt' else 'Examples will be translated by Google Translation (not recommended)' if global_texamp == 'gtrans' else 'Examples won\'t be translated.'))
 
 
-# In[183]:
+# In[124]:
 
 
 #### PARAMETER: fill_examples_chatgpt -> global_fexamp_gpt
@@ -1067,7 +1073,7 @@ else: global_fexamp_gpt = fill_examples_chatgpt
 print('\n' + ('Just empty initial phrases (example 1) will be filled by Chat GPT' if global_fexamp_gpt == 'phrases' else 'All empty examples will be filled by Chat GPT' if global_fexamp_gpt == 'all' else 'Examples won\'t be filled if empty.'))
 
 
-# In[184]:
+# In[125]:
 
 
 #### PARAMETER: images_per_noun -> global_images
@@ -1088,13 +1094,13 @@ if images_per_noun > 0:
 print(text_warning)
 
 
-# In[185]:
+# In[126]:
 
 
 #print(global_phonetic_transc, global_apply_chatgpt, global_apply_trans, global_lang_simple, global_lang_compl, global_tword, global_texamp, global_fexamp_gpt)
 
 
-# In[186]:
+# In[127]:
 
 
 global_credits = 'Word definitions, meanings, and example sentences sourced from ldoceonline.com, by Pearson'
