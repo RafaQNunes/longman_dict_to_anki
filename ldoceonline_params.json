@@ -1,0 +1,13 @@
+{
+  "language_to_translate": "pt",
+  "flag_use_chatgpt": false,
+  "openai_api_key": "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",
+  "flag_fill_phonetic_transc": true,
+  "trans_word_method": "chatgpt",
+  "fill_examples_chatgpt": "phrases",
+  "trans_examples_method": "gtrans",
+  "images_per_noun": 5,
+  "words": [
+    "accent"
+  ]
+}
