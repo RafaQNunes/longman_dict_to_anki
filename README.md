@@ -3,6 +3,21 @@ This a Python program that makes a web scrapping on Longman Dictionary Online (h
 
 To use it, config 'ldoceonline_params.json' file, which has the followed parameters:
 
+# How to execute:
+- On Windows, execute the file 'exec_get_meanings.cmd', checking the files 'ldoceonline_params.json' and 'get_meanings_ldoceonline.py' are disposal.
+
+# Required python modules:
+- sys;
+- os;
+- time;
+- requests;
+- bs4;
+- json;
+
+# Optional python modules:
+- eng_to_ipa (for complementary phonetic transcriptions);
+- openai (for translations and sentences fields to fill if empty);
+- deep_translator (for using Google Translator tool to translate sentences).
 
 # Json parameters:
 - **language_to_translate** (standard = "pt"): acronym of the language you want to translate. Check the list below to see which you can use or not. "pt" (Portuguese) is the standard;
