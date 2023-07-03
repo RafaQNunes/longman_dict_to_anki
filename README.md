@@ -1,5 +1,5 @@
 # longman_dict_to_anki
-This a python script for web scraping on Longman Dictionary Online (https://www.ldoceonline.com/), and extract all meanings and examples that is possible based on a listed parameters and words on a json file.
+This a python script for web scraping on Longman Dictionary Online (https://www.ldoceonline.com/), and extract all meanings and examples that is possible based on a listed parameters and words on a json file. It uses another AI tools, such as Google Translator and ChatGPT, for complement content.
 
 # How to execute:
 - On Windows, execute the file 'exec_get_meanings.cmd', checking the files 'ldoceonline_params.json' and 'get_meanings_ldoceonline.py' are disposal.
